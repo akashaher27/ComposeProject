@@ -1,9 +1,5 @@
-plugins {
-    id 'com.android.application'
-    id 'org.jetbrains.kotlin.android'
-}
-
-apply from: "${rootProject.projectDir}/config/dependancies.gradle"
+apply plugin: GradlePluginId.ANDROID_APPLICATION
+apply plugin: GradlePluginId.KOTLIN_ANDROID
 
 android {
     namespace 'com.example.composeproject'
@@ -26,20 +22,33 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = KotlinOptions.JVM_TARGET
+    }
+    buildFeatures {
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion compose_version
     }
 }
 
 dependencies {
+    //core
     implementation core.ktx
     implementation core.appcompat
     implementation core.material
     implementation core.constraintlayout
 
+    //compose
+    implementation compose.compiler
+    implementation compose.runtime
+    implementation compose.uiTooling
+
+    //test
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'

@@ -1,11 +1,22 @@
 ext {
 
     core = [
-            ktx        : 'androidx.core:core-ktx:1.7.0',
+            ktx             : 'androidx.core:core-ktx:1.7.0',
             appcompat       : 'androidx.appcompat:appcompat:1.6.0',
             material        : 'com.google.android.material:material:1.8.0',
             constraintlayout: 'androidx.constraintlayout:constraintlayout:2.1.4',
 
+    ]
+    kotlin_version = '1.6.21'
+    kotlin = [
+
+    ]
+
+    compose_version = '1.2.0-beta02'
+    compose = [
+            compiler : "androidx.compose.compiler:compiler:${compose_version}",
+            runtime  : "androidx.compose.runtime:runtime:${compose_version}",
+            uiTooling: "androidx.compose.ui:ui-tooling:${compose_version}"
     ]
 
 }

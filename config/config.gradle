@@ -1,0 +1,31 @@
+ext {
+    AndroidConfig = [
+            COMPILE_SDK_VERSION: 31,
+            MIN_SDK_VERSION: 21,
+            TARGET_SDK_VERSION: 31,
+            TEST_INSTRUMENTATION_RUNNER: 'androidx.test.runner.AndroidJUnitRunner'
+    ]
+
+    GradlePluginId = [
+            ANDROID_APPLICATION: 'com.android.application',
+            ANDROID_LIBRARY: 'com.android.library',
+            KOTLIN_ANDROID: 'kotlin-android',
+            KOTLIN_PARCELIZE: 'kotlin-parcelize',
+            GOOGLE_SERVICES: 'com.google.gms.google-services',
+            FIREBASE_CRASHLYTICS: 'com.google.firebase.crashlytics',
+            FAT_AAR: 'com.kezong.fat-aar',
+            HUAWEI_AGCONNECT: 'com.huawei.agconnect',
+            DD_SDK_GRADLE: 'com.datadoghq.dd-sdk-android-gradle-plugin',
+            DAGGER_HILT : 'com.google.dagger.hilt.android',
+            KOTLIN_KAPT : 'kotlin-kapt'
+    ]
+
+    GxsConfig = [
+            FLAVOR_DIMEN_ENV: 'env',
+            GROUP: 'com.grab.digibank',
+    ]
+
+    KotlinOptions = [
+            JVM_TARGET: '11',
+    ]
+}
