@@ -47,6 +47,8 @@ dependencies {
     implementation compose.compiler
     implementation compose.runtime
     implementation compose.material
+    implementation compose.navigation
+
     implementation 'androidx.activity:activity-compose:1.5.1'
 
     //test

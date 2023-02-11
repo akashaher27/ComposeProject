@@ -13,10 +13,14 @@ ext {
     ]
 
     compose_version = '1.2.0-beta02'
+    compose_navigation = '2.5.3'
     compose = [
-            compiler: "androidx.compose.compiler:compiler:${compose_version}",
-            runtime : "androidx.compose.runtime:runtime:${compose_version}",
-            material: "androidx.compose.material:material${compose_version}"
+            compiler  : "androidx.compose.compiler:compiler:${compose_version}",
+            runtime   : "androidx.compose.runtime:runtime:${compose_version}",
+            material  : "androidx.compose.material:material:${compose_version}",
+            navigation: "androidx.navigation:navigation-compose:${compose_navigation}",
+            foundation: "androidx.compose.foundation:foundation:${compose_version}",
+            ui        : "androidx.compose.ui:ui:${compose_version}"
     ]
 
 }
