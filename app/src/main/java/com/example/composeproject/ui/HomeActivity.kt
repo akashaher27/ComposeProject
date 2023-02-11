@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.navigation.compose.rememberNavController
 import com.example.composeproject.ui.navigation.Destination
 import com.example.composeproject.ui.navigation.HomeRoot
+import com.example.composeproject.ui.navigation.auth.AuthDestination
 import com.example.composeproject.ui.navigation.home.HomeDestination
 
 
@@ -19,7 +20,8 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun createDestination(): Set<Destination> = setOf(
-        HomeDestination()
+        HomeDestination(),
+        AuthDestination()
     )
 
 }

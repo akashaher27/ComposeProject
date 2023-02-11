@@ -3,6 +3,7 @@ package com.example.composeproject.ui.navigation
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
+import com.example.composeproject.ui.navigation.auth.AuthRoute
 import com.example.composeproject.ui.navigation.home.HomeRoute
 
 
