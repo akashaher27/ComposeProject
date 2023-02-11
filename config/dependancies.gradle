@@ -14,9 +14,9 @@ ext {
 
     compose_version = '1.2.0-beta02'
     compose = [
-            compiler : "androidx.compose.compiler:compiler:${compose_version}",
-            runtime  : "androidx.compose.runtime:runtime:${compose_version}",
-            uiTooling: "androidx.compose.ui:ui-tooling:${compose_version}"
+            compiler: "androidx.compose.compiler:compiler:${compose_version}",
+            runtime : "androidx.compose.runtime:runtime:${compose_version}",
+            material: "androidx.compose.material:material${compose_version}"
     ]
 
 }

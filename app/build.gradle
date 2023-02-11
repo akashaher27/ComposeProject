@@ -46,7 +46,8 @@ dependencies {
     //compose
     implementation compose.compiler
     implementation compose.runtime
-    implementation compose.uiTooling
+    implementation compose.material
+    implementation 'androidx.activity:activity-compose:1.5.1'
 
     //test
     testImplementation 'junit:junit:4.13.2'
