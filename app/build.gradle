@@ -37,20 +37,8 @@ android {
 }
 
 dependencies {
-//    //core
-//    implementation core.ktx
-//    implementation core.appcompat
-//    implementation core.material
-//    implementation core.constraintlayout
-//
-//    //compose
-//    implementation compose.compiler
-//    implementation compose.runtime
-//    implementation compose.material
-    implementation compose.navigation
 
     implementation project(":ui-common")
-    implementation 'androidx.activity:activity-compose:1.5.1'
 
     //test
     testImplementation 'junit:junit:4.13.2'

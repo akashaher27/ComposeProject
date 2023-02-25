@@ -1,4 +1,4 @@
-package com.example.ui_common.foundation
+package com.example.ui_common.cream.foundation
 
 import androidx.compose.material.Colors
 import androidx.compose.material.darkColors

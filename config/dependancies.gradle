@@ -18,9 +18,18 @@ ext {
             compiler  : "androidx.compose.compiler:compiler:${compose_version}",
             runtime   : "androidx.compose.runtime:runtime:${compose_version}",
             material  : "androidx.compose.material:material:${compose_version}",
-            navigation: "androidx.navigation:navigation-compose:${compose_navigation}",
             foundation: "androidx.compose.foundation:foundation:${compose_version}",
             ui        : "androidx.compose.ui:ui:${compose_version}"
     ]
 
+    navigation_version = '2.5.3'
+    navigation = [
+            navigation: "androidx.navigation:navigation-compose:${navigation_version}"
+    ]
+
+
+    accompanist_version = "0.23.1"
+    accompanist = [
+            systemUi: "com.google.accompanist:accompanist-systemuicontroller:${accompanist_version}"
+    ]
 }

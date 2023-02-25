@@ -1,4 +1,4 @@
-package com.example.ui_common.foundation
+package com.example.ui_common.cream.foundation
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Shapes
