@@ -39,6 +39,7 @@ android {
 dependencies {
 
     implementation project(":ui-common")
+    implementation project(":core")
 
     //test
     testImplementation 'junit:junit:4.13.2'

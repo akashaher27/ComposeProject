@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/blue_01</color>
+    <color name="colorPrimaryDark">@color/blue_01</color>
+    <color name="colorAccent">@color/blue_01</color>
+    <color name="textColorPrimary">@color/white_01</color>
+    <color name="colorControlHighlight">@color/blue_01_highlight</color>
+
+    <color name="black_01">#000</color>
+    <color name="black_01_opacity_50">#8B000000</color>
+
+    <color name="white_01">#fff</color>
+    <color name="white_02">#fafafa</color>
+    <color name="grey_01">#DFE1ED</color>
+    <color name="grey_02">#CED1E4</color>
+
+    <color name="blue_01">#283487</color>
+    <color name="blue_02_opacity_70">#B3141C3C</color>
+
+    <color name="blue_01_highlight">#33B2BBE6</color>
+    <color name="blue_80">#535D9F</color>
+    <color name="blue_40">#A9AECF</color>
+    <color name="blue_10">#EAEBF3</color>
+    <color name="blue_05">#F4F5F9</color>
+    <color name="red_error">#CA3939</color>
+
+
+    <color name="navy_01">#B5F5E3</color>
+    <color name="pink_01">#F6C9D0</color>
+
+    <color name="orange_warning">#F09800</color>
+    <color name="green_positive">#10AC84</color>
+
+    <color name="app_neon">#771FFF</color>
+    <color name="app_text_primary">#FAFAFA</color>
+    <color name="app_text_secondary">#E9E9E9</color>
+    <color name="app_eggplant_500">#0C0120</color>
+</resources>
