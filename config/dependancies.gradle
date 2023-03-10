@@ -32,4 +32,10 @@ ext {
     accompanist = [
             systemUi: "com.google.accompanist:accompanist-systemuicontroller:${accompanist_version}"
     ]
+
+    dagger_version = '2.40.5'
+    dagger = [
+            dagger       : "com.google.dagger:dagger:${dagger_version}",
+            daggerCompier: "com.google.dagger:dagger-compiler:${dagger_version}"
+    ]
 }
