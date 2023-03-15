@@ -3,12 +3,12 @@ apply plugin: GradlePluginId.KOTLIN_ANDROID
 
 android {
     namespace 'com.example.composeproject'
-    compileSdk 33
+    compileSdkVersion AndroidConfig.COMPILE_SDK_VERSION
 
     defaultConfig {
         applicationId "com.example.composeproject"
-        minSdk 24
-        targetSdk 33
+        minSdkVersion AndroidConfig.MIN_SDK_VERSION
+        targetSdkVersion AndroidConfig.TARGET_SDK_VERSION
         versionCode 1
         versionName "1.0"
 
