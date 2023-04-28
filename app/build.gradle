@@ -42,6 +42,9 @@ dependencies {
     implementation project(":splash")
     implementation project(":core")
 
+    implementation dagger.dagger
+    annotationProcessor(dagger.daggerCompiler)
+
     //test
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'

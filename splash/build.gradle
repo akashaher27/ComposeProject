@@ -38,9 +38,10 @@ android {
 
 dependencies {
     implementation project(":ui-common")
+    implementation project(":core")
 
     implementation dagger.dagger
-    annotationProcessor(dagger.daggerCompier)
+    annotationProcessor(dagger.daggerCompiler)
     //test
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
