@@ -33,6 +33,8 @@ android {
 dependencies {
     implementation project(":ui-common")
 
+    implementation dagger.dagger
+    annotationProcessor(dagger.daggerCompiler)
 
     //test
     testImplementation 'junit:junit:4.13.2'

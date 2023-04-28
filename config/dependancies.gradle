@@ -40,6 +40,6 @@ ext {
     dagger_version = '2.40.5'
     dagger = [
             dagger       : "com.google.dagger:dagger:${dagger_version}",
-            daggerCompier: "com.google.dagger:dagger-compiler:${dagger_version}"
+            daggerCompiler: "com.google.dagger:dagger-compiler:${dagger_version}"
     ]
 }
