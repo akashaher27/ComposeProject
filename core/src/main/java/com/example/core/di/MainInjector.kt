@@ -1,11 +1,11 @@
 package com.example.core.di
 
-import androidx.lifecycle.ViewModelProvider
+import com.example.core.Navigation.NavigationRouteProvider
 import java.lang.IllegalStateException
 
 interface MainInjector {
 
-    fun getFactory(): ViewModelProvider.Factory
+    fun navRoutesProvider(): NavigationRouteProvider
 
     companion object {
         private var _instance: MainInjector? = null

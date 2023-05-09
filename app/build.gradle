@@ -41,6 +41,7 @@ dependencies {
     implementation project(":ui-common")
     implementation project(":splash")
     implementation project(":core")
+    implementation project(":home")
 
     implementation dagger.dagger
     annotationProcessor(dagger.daggerCompiler)

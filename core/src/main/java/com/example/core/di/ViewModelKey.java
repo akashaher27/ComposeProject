@@ -1,9 +1,5 @@
-/*
- * Copyright (c) 2022 GxS. All rights reserved.
- * Last modified 6/9/22, 10:42 AM
- */
 
-package com.example.composeproject.di.scope;
+package com.example.core.di;
 
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 

@@ -1,12 +1,14 @@
 package com.example.splash
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
+import com.example.core.Navigation.Navigator
 import javax.inject.Inject
 
-class SplashViewModel @Inject constructor() : ViewModel() {
+class SplashViewModel @Inject constructor(
+    private val navigator: Navigator
+) : ViewModel() {
 
     fun getStarted() {
-        Log.d("test", "getStarted: ")
+        navigator.push("HOMESCREEN")
     }
 }

@@ -11,6 +11,6 @@ class ComposeApp() : Application() {
     }
 
     private fun initDagger() {
-        AppComponent.build()
+        AppComponent.build(applicationContext)
     }
 }
