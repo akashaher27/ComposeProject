@@ -1,4 +1,4 @@
-package com.example.splash
+package com.example.splash.ui
 
 import androidx.lifecycle.ViewModel
 import com.example.core.Navigation.Navigator

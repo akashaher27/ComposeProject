@@ -1,4 +1,4 @@
-package com.example.splash
+package com.example.splash.ui
 
 import android.os.Bundle
 import androidx.activity.compose.setContent
@@ -31,7 +31,7 @@ class SplashActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this, viewModelFactory)[SplashViewModel::class.java]
         setContent {
             splashView()
-            LaunchedEffect(key1 = Unit) {
+            LaunchedEffect(Unit) {
                 delay(DELAY_SPLASH_SCREEN)
                 if (isTaskRoot) {
                     viewModel.getStarted()

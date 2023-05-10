@@ -4,7 +4,7 @@ import android.content.Context;
 
 import com.example.core.di.MainInjector;
 import com.example.core.di.NavigatorModule;
-import com.example.splash.SplashActivity;
+import com.example.splash.ui.SplashActivity;
 
 import org.jetbrains.annotations.NotNull;
 
