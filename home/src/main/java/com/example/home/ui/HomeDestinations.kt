@@ -1,28 +1,27 @@
-package com.example.composeproject.ui.navigation.auth
+package com.example.home.ui
 
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
-import com.example.composeproject.ui.auth.LoginScreen
 import com.example.core.Navigation.Destinations
+import com.example.home.ui.dashboard.DashBoardScreen
 
-class AuthDestination() : Destinations {
-
+class HomeDestinations() : Destinations {
     override fun NavGraphBuilder.create(navController: NavController) {
         navigation(
-            startDestination = AuthRoute.openLoginScreen(),
-            route = AuthRoute.ROOT
+            route = HomeRoutes.ROOT,
+            startDestination = HomeRoutes.DASHBOARD
         ) {
-            loginScreen()
+            dashBoardScreen()
         }
     }
 
-    private fun NavGraphBuilder.loginScreen() {
+    private fun NavGraphBuilder.dashBoardScreen() {
         composable(
-            route = AuthRoute.LOGIN_SCREEN
+            route = HomeRoutes.DASHBOARD,
         ) {
-            LoginScreen()
+            DashBoardScreen()
         }
     }
 }

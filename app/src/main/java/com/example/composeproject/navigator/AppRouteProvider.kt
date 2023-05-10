@@ -3,7 +3,7 @@ package com.example.composeproject.navigator
 
 import com.example.core.Navigation.ContextRoute
 import com.example.core.Navigation.NavigationRouteProvider
-import com.example.home.ui.dashboard.HomeActivity
+import com.example.home.ui.HomeActivity
 import javax.inject.Inject
 
 

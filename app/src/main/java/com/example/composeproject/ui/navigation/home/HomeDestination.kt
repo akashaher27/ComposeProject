@@ -4,9 +4,9 @@ import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
-import com.example.composeproject.ui.navigation.Destination
+import com.example.core.Navigation.Destinations
 
-class HomeDestination() : Destination {
+class HomeDestination() : Destinations {
 
     override fun NavGraphBuilder.create(navController: NavController) {
         navigation(

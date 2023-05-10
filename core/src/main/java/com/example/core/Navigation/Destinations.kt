@@ -1,9 +1,9 @@
-package com.example.composeproject.ui.navigation
+package com.example.core.Navigation
 
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 
-interface Destination {
+interface Destinations {
 
     fun NavGraphBuilder.create(navController: NavController)
 }
