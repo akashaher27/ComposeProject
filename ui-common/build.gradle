@@ -28,6 +28,12 @@ android {
     kotlinOptions {
         jvmTarget = KotlinOptions.JVM_TARGET
     }
+    buildFeatures {
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion compose_version
+    }
 }
 
 dependencies {
@@ -48,7 +54,8 @@ dependencies {
     api navigation.navigation
 
     //accompanist
-    api(accompanist.systemUi)
+    implementation(accompanist.systemUi)
+    api(accompanist.navigation)
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'

@@ -5,15 +5,11 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.graphics.Color
-import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
-import androidx.navigation.compose.navigation
 import androidx.navigation.compose.rememberNavController
-import com.example.core.Navigation.Destinations
+import com.example.ui_common.cream.components.AppBottomSheetLayout
 import com.example.ui_common.cream.foundation.AppTheme
 import com.example.ui_common.ui.extension.toFullScreen
+import com.google.accompanist.navigation.material.rememberBottomSheetNavigator
 
 const val TAG = "HomeActivity"
 
@@ -31,16 +27,17 @@ class HomeActivity : AppCompatActivity() {
         toFullScreen()
         setContent {
             val navController = rememberNavController()
-            NavHost(
-                navController = navController,
-                startDestination = HomeRoutes.ROOT,
-            ) {
-                val destinations = createDestinations()
-                destinations.forEach { destination ->
-                    with(destination) {
-                        create(navController)
+            val bottomSheetNavigator = rememberBottomSheetNavigator()
+            AppTheme {
+                AppBottomSheetLayout(
+                    bottomSheetNavigator = bottomSheetNavigator,
+                    content = {
+                        HomeRoot(
+                            navController = navController,
+                            destinations = createDestinations()
+                        )
                     }
-                }
+                )
             }
         }
     }
@@ -49,3 +46,4 @@ class HomeActivity : AppCompatActivity() {
         HomeDestinations()
     )
 }
+
