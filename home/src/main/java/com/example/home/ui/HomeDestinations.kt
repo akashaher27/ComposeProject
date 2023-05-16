@@ -5,7 +5,7 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import com.example.core.Navigation.Destinations
-import com.example.home.ui.dashboard.DashBoardScreen
+import com.example.home.ui.internal.dashboard.DashBoardScreen
 
 class HomeDestinations() : Destinations {
     override fun NavGraphBuilder.create(navController: NavController) {

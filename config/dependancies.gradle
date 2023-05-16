@@ -25,7 +25,7 @@ ext {
             ui              : "androidx.compose.ui:ui:${compose_version}",
             uiUtil          : "androidx.compose.ui:ui-util:${compose_version}",
             uiTooling       : "androidx.compose.ui:ui-tooling:${compose_version}",
-            uiToolingPreview:"androidx.compose.ui:ui-tooling-preview:${compose_version}",
+            uiToolingPreview: "androidx.compose.ui:ui-tooling-preview:${compose_version}",
             constraintlayout: "androidx.constraintlayout:constraintlayout-compose:${compose_constraintlayout_version}",
     ]
 
@@ -37,17 +37,17 @@ ext {
 
     accompanist_version = "0.23.1"
     accompanist = [
-            systemUi: "com.google.accompanist:accompanist-systemuicontroller:${accompanist_version}",
+            systemUi     : "com.google.accompanist:accompanist-systemuicontroller:${accompanist_version}",
             composeInsets: "com.google.accompanist:accompanist-insets:${accompanist_version}",
-            navigation: "com.google.accompanist:accompanist-navigation-material:${accompanist_version}",
-            permission:"com.google.accompanist:accompanist-permissions:${accompanist_version}",
-            placeholder:"com.google.accompanist:accompanist-placeholder-material:${accompanist_version}",
-
+            navigation   : "com.google.accompanist:accompanist-navigation-material:${accompanist_version}",
+            permission   : "com.google.accompanist:accompanist-permissions:${accompanist_version}",
+            placeholder  : "com.google.accompanist:accompanist-placeholder-material:${accompanist_version}",
+            swipeRefresh : "com.google.accompanist:accompanist-swiperefresh:${accompanist_version}"
     ]
 
     dagger_version = '2.40.5'
     dagger = [
-            dagger       : "com.google.dagger:dagger:${dagger_version}",
+            dagger        : "com.google.dagger:dagger:${dagger_version}",
             daggerCompiler: "com.google.dagger:dagger-compiler:${dagger_version}"
     ]
 }
