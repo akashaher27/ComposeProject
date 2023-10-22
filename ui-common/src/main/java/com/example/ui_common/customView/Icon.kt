@@ -1,7 +1,5 @@
 package com.example.ui_common.customView
 
-import android.graphics.Paint
-import android.graphics.Typeface
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -13,9 +11,6 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.Stroke
-import androidx.compose.ui.graphics.nativeCanvas
-import androidx.compose.ui.graphics.toArgb
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.ui_common.ui.common.theme.grid_x12_5
 import com.example.ui_common.ui.common.theme.grid_x2
@@ -29,7 +24,7 @@ fun InstagramIcon() {
             .padding(grid_x2)
     ) {
         this.drawRoundRect(
-            cornerRadius = CornerRadius(60f, 60f),
+            cornerRadius = CornerRadius(60f,60f),
             brush = Brush.linearGradient(listOf(Color.Yellow, Color.Red, Color.Magenta)),
             style = Stroke(
                 width = 15f,
@@ -49,42 +44,14 @@ fun InstagramIcon() {
 
         this.drawCircle(
             brush = Brush.linearGradient(listOf(Color.Yellow, Color.Red, Color.Magenta)),
-            center = Offset(size.width * .80f, size.height * .20f),
+            center = Offset(size.width*.80f,size.height*.20f),
             radius = 13f
-        )
-    }
-}
-
-@Composable
-fun FaceBookIcon() {
-    val assetManager = LocalContext.current.assets
-    val paint = Paint().apply {
-        textAlign = Paint.Align.CENTER
-        textSize = 200f
-        color = Color.White.toArgb()
-        typeface = Typeface.createFromAsset(assetManager, "facebookletterfaces.OTF")
-    }
-
-    Canvas(
-        modifier = Modifier
-            .size(grid_x12_5)
-            .padding(grid_x2)
-    ) {
-        drawRoundRect(
-            cornerRadius = CornerRadius(20f, 20f),
-            color = Color(0xFF1776d1)
-        )
-        drawContext.canvas.nativeCanvas.drawText(
-            "f",
-            center.x + 25,
-            center.y + 90,
-            paint
         )
     }
 }
 
 @Preview
 @Composable
-fun Preview() {
-    FaceBookIcon()
+fun Preview(){
+    InstagramIcon()
 }
