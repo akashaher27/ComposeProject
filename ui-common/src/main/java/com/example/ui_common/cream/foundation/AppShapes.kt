@@ -12,7 +12,7 @@ object AppShapes {
     val xsmall = RoundedCornerShape(grid_x1)
     val small = RoundedCornerShape(grid_x1_5)
     val large = RoundedCornerShape(grid_x3)
-    val maxium = RoundedCornerShape(percent = 100)
+    val maximum = RoundedCornerShape(percent = 100)
 
     val materialShapes = Shapes(
         small = xsmall,

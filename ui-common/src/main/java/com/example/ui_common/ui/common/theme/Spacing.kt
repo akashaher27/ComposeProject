@@ -31,6 +31,7 @@ val grid_x10 = 80.dp
 val grid_x10_5 = 84.dp
 val grid_x11 = 88.dp
 val grid_x12 = 96.dp
+val grid_x12_5 = 100.dp
 val grid_x13 = 104.dp
 val grid_x14 = 112.dp
 val grid_x15 = 120.dp
