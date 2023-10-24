@@ -2,10 +2,14 @@ package com.example.ui_common.customView
 
 import android.graphics.Paint
 import android.graphics.Typeface
+import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.CornerRadius
 import androidx.compose.ui.geometry.Offset
@@ -19,6 +23,7 @@ import androidx.compose.ui.graphics.nativeCanvas
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.example.ui_common.ui.common.theme.grid_x12_5
 import com.example.ui_common.ui.common.theme.grid_x2
 
@@ -128,8 +133,70 @@ fun MessengerIcon() {
     }
 }
 
+
+@Composable
+fun CircularProgressIndicator(
+    indicatorValue: Int = 50,
+    maxIndicatorValue: Int = 100
+) {
+    val startAngle = 150f
+    val sweepAngle = 240f
+
+    var currentIndicatorValue = if (indicatorValue < maxIndicatorValue) {
+        (indicatorValue.toFloat() / maxIndicatorValue) * sweepAngle
+    } else {
+        sweepAngle
+    }
+    val animateIndicatorValue by animateFloatAsState(
+        targetValue = currentIndicatorValue,
+        animationSpec = tween(1000)
+    )
+    Canvas(
+        modifier = Modifier
+            .size(100.dp)
+            .background(Color.White)
+    ) {
+        val componentSize = size / 1.25f
+        drawArc(
+            size = componentSize,
+            topLeft = Offset(
+                x = (size.width - componentSize.width) / 2f,
+                y = (size.height - componentSize.height) / 2f
+            ),
+            startAngle = startAngle,
+            sweepAngle = sweepAngle,
+            color = Color.Gray,
+            useCenter = false,
+            style = Stroke(
+                width = 25f,
+                cap = StrokeCap.Round
+            )
+        )
+
+        drawArc(
+            size = componentSize,
+            topLeft = Offset(
+                x = (size.width - componentSize.width) / 2f,
+                y = (size.height - componentSize.height) / 2f
+            ),
+            startAngle = startAngle,
+            sweepAngle = animateIndicatorValue,
+            color = Color.Blue,
+            useCenter = false,
+            style = Stroke(
+                width = 25f,
+                cap = StrokeCap.Round
+            )
+        )
+    }
+}
+
+
 @Preview
 @Composable
 fun Preview() {
-    MessengerIcon()
+    CircularProgressIndicator()
 }
+
+// test commit
+// test commit 2
