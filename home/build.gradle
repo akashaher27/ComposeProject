@@ -41,6 +41,9 @@ dependencies {
     implementation project(":ui-common")
     implementation project(":core")
 
+    implementation dagger.dagger
+    annotationProcessor(dagger.daggerCompiler)
+
     //accompanist
     implementation(accompanist.composeInsets)
     implementation(accompanist.swipeRefresh)

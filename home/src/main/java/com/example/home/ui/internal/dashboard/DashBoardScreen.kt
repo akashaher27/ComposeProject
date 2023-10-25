@@ -36,7 +36,9 @@ import com.google.accompanist.swiperefresh.SwipeRefresh
 import com.google.accompanist.swiperefresh.rememberSwipeRefreshState
 
 @Composable
-internal fun DashBoardScreen() {
+internal fun DashBoardScreen(
+    viewModel:DashBoardViewModel
+) {
     SwipeRefresh(
         state = rememberSwipeRefreshState(isRefreshing = false),
         onRefresh = {},
