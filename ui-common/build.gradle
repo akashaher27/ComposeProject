@@ -49,6 +49,8 @@ dependencies {
     api compose.runtime
     api compose.material
     api compose.constraintlayout
+    api compose.uiToolingPreview 
+    api compose.uiTooling
 
     //navigation
     api navigation.navigation

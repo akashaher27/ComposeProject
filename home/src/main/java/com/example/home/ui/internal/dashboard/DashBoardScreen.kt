@@ -14,7 +14,11 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.requiredHeight
 import androidx.compose.foundation.layout.requiredWidth
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
@@ -22,6 +26,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import com.example.home.R
+import com.example.home.ui.internal.dashboard.plugin.Plugin
 import com.example.ui_common.cream.components.AppScaffold
 import com.example.ui_common.cream.components.Heading2Text
 import com.example.ui_common.cream.foundation.AppTheme
@@ -37,8 +42,9 @@ import com.google.accompanist.swiperefresh.rememberSwipeRefreshState
 
 @Composable
 internal fun DashBoardScreen(
-    viewModel:DashBoardViewModel
+    viewModel: DashBoardViewModel
 ) {
+    val viewState by viewModel.dashboardViewState.collectAsState()
     SwipeRefresh(
         state = rememberSwipeRefreshState(isRefreshing = false),
         onRefresh = {},
@@ -52,7 +58,12 @@ internal fun DashBoardScreen(
                 HomeScreenTopBar()
             }
         ) {
-            HomeScreenLoading()
+            if (viewState.isLoading) {
+                HomeScreenLoading()
+            } else {
+                HomeScreenPlugin(viewState.plugin)
+            }
+
         }
     }
 
@@ -121,6 +132,22 @@ private fun HomeScreenLoading() {
                         )
                 )
             }
+        }
+    }
+}
+
+@Composable
+private fun HomeScreenPlugin(plugin: List<Plugin>) {
+    LazyColumn(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(horizontal = grid_x2),
+        verticalArrangement = Arrangement.spacedBy(grid_x3)
+    ) {
+        items(
+            items = plugin
+        ) {
+            it.ComposableContent()
         }
     }
 }

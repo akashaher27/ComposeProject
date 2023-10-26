@@ -7,6 +7,7 @@ import androidx.navigation.navigation
 import com.example.core.Navigation.Destinations
 import com.example.home.di.HomeComponent
 import com.example.home.ui.internal.dashboard.DashBoardScreen
+import com.example.home.ui.internal.dashboard.plugin.WelcomeBannerPlugin
 
 class HomeDestinations(
     private val homeComponent: HomeComponent
@@ -24,7 +25,12 @@ class HomeDestinations(
         composable(
             route = HomeRoutes.DASHBOARD,
         ) {
-            DashBoardScreen(homeComponent.dashBoardViewModel())
+            val homePlugin = listOf(
+                WelcomeBannerPlugin()
+            )
+            val viewModel = homeComponent.dashBoardViewModel()
+            viewModel.initPlugin(homePlugin)
+            DashBoardScreen(viewModel)
         }
     }
 }
