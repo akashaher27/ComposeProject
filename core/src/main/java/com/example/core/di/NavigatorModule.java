@@ -5,8 +5,6 @@ import android.content.Context;
 import com.example.core.Navigation.NavigationRouteProvider;
 import com.example.core.Navigation.Navigator;
 
-import java.util.HashMap;
-
 import dagger.Module;
 import dagger.Provides;
 

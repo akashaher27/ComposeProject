@@ -5,9 +5,13 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import com.example.core.Navigation.Destinations
+import com.example.home.di.HomeComponent
 import com.example.home.ui.internal.dashboard.DashBoardScreen
+import com.example.home.ui.internal.dashboard.plugin.WelcomeBannerPlugin
 
-class HomeDestinations() : Destinations {
+class HomeDestinations(
+    private val homeComponent: HomeComponent
+) : Destinations {
     override fun NavGraphBuilder.create(navController: NavController) {
         navigation(
             route = HomeRoutes.ROOT,
@@ -21,7 +25,12 @@ class HomeDestinations() : Destinations {
         composable(
             route = HomeRoutes.DASHBOARD,
         ) {
-            DashBoardScreen()
+            val homePlugin = listOf(
+                WelcomeBannerPlugin()
+            )
+            val viewModel = homeComponent.dashBoardViewModel()
+            viewModel.initPlugin(homePlugin)
+            DashBoardScreen(viewModel)
         }
     }
 }

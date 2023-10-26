@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.navigation.compose.rememberNavController
+import com.example.home.di.HomeComponent
 import com.example.ui_common.cream.components.AppBottomSheetLayout
 import com.example.ui_common.cream.foundation.AppTheme
 import com.example.ui_common.ui.extension.toFullScreen
@@ -26,20 +27,22 @@ class HomeActivity : AppCompatActivity() {
             HomeActivity::class.java
         )
     }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         toFullScreen()
         setContent {
             val navController = rememberNavController()
             val bottomSheetNavigator = rememberBottomSheetNavigator()
+            val homeComponent: HomeComponent by lazy {
+                HomeComponent.build()
+            }
             AppTheme {
                 AppBottomSheetLayout(
                     bottomSheetNavigator = bottomSheetNavigator,
                     content = {
                         HomeRoot(
                             navController = navController,
-                            destinations = createDestinations()
+                            destinations = createDestinations(homeComponent)
                         )
                     }
                 )
@@ -47,8 +50,10 @@ class HomeActivity : AppCompatActivity() {
         }
     }
 
-    private fun createDestinations() = setOf(
-        HomeDestinations()
+    private fun createDestinations(
+        homeComponent: HomeComponent
+    ) = setOf(
+        HomeDestinations(homeComponent)
     )
 }
 
