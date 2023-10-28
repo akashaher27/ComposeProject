@@ -4,6 +4,6 @@
     <application>
         <activity
             android:name=".ui.HomeActivity"
-            android:exported="false" />
+            android:exported="true" />
     </application>
 </manifest>
