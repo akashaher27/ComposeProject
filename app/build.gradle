@@ -39,7 +39,6 @@ android {
 dependencies {
 
     implementation project(":ui-common")
-    implementation project(":splash")
     implementation project(":core")
     implementation project(":home")
 
