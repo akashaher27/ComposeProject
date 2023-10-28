@@ -14,7 +14,7 @@ ext {
 
     ]
 
-    compose_version = '1.4.3'
+    compose_version = '1.2.0-beta02'
     compose_navigation = '2.5.3'
     compose_constraintlayout_version = '1.0.1'
     compose = [
@@ -49,10 +49,5 @@ ext {
     dagger = [
             dagger        : "com.google.dagger:dagger:${dagger_version}",
             daggerCompiler: "com.google.dagger:dagger-compiler:${dagger_version}"
-    ]
-
-    coil_version = '2.4.0'
-    other = [
-            coil:"io.coil-kt:coil:${coil_version}"
     ]
 }

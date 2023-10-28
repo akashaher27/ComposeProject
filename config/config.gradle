@@ -1,8 +1,8 @@
 ext {
     AndroidConfig = [
-            COMPILE_SDK_VERSION: 33,
+            COMPILE_SDK_VERSION: 31,
             MIN_SDK_VERSION: 21,
-            TARGET_SDK_VERSION: 33,
+            TARGET_SDK_VERSION: 31,
             TEST_INSTRUMENTATION_RUNNER: 'androidx.test.runner.AndroidJUnitRunner'
     ]
 
