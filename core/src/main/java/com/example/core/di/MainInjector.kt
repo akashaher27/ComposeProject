@@ -1,11 +1,14 @@
 package com.example.core.di
 
 import com.example.core.Navigation.NavigationRouteProvider
+import com.example.core.util.DateTimeProvider
 import java.lang.IllegalStateException
 
 interface MainInjector {
 
     fun navRoutesProvider(): NavigationRouteProvider
+
+    fun dateTimeProvider(): DateTimeProvider
 
     companion object {
         private var _instance: MainInjector? = null

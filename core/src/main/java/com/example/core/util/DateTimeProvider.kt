@@ -7,12 +7,13 @@ import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import java.time.format.DateTimeParseException
+import javax.inject.Inject
 
 private const val TAG = "DateTimeProvider"
 
 interface DateTimeProvider {
 
-    fun now(): LocalDate
+    fun date(): LocalDate
 
     fun parseDate(date: String, pattern: DateTimePattern): LocalDate?
 
@@ -22,6 +23,8 @@ interface DateTimeProvider {
 
     fun formatDateTime(dateTime: LocalDateTime, pattern: DateTimePattern): String?
 
+    fun datetime(): LocalDateTime
+
 }
 
 
@@ -29,8 +32,8 @@ enum class DateTimePattern(val value: String) {
     DD_MMM_YYYY("dd MMM yyyy")
 }
 
-class DateTimeProviderImp() : DateTimeProvider {
-    override fun now(): LocalDate {
+class DateTimeProviderImp @Inject constructor() : DateTimeProvider {
+    override fun date(): LocalDate {
         return LocalDate.now()
     }
 
@@ -69,5 +72,9 @@ class DateTimeProviderImp() : DateTimeProvider {
             Log.e(TAG, "formatDateTime: failed to format dateTime $dateTime")
             null
         }
+    }
+
+    override fun datetime(): LocalDateTime {
+        return LocalDateTime.now()
     }
 }
