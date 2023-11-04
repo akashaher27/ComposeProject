@@ -21,10 +21,14 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
+
+        coreLibraryDesugaringEnabled true
     }
+
     kotlinOptions {
         jvmTarget = KotlinOptions.JVM_TARGET
     }
@@ -35,6 +39,8 @@ dependencies {
 
     implementation dagger.dagger
     annotationProcessor(dagger.daggerCompiler)
+
+    coreLibraryDesugaring (library.desugar_jdk_libs)
 
     //test
     testImplementation 'junit:junit:4.13.2'

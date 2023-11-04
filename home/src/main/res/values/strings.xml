@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="bank">Bank</string>
+    <string name="greeting_hello">Hello</string>
+    <string name="greeting_hi">Hi</string>
+    <string name="greeting_good_morning">Good Morning</string>
+    <string name="greeting_good_afternoon">Good Afternoon</string>
+    <string name="greeting_good_evening">Good Evening</string>
 </resources>

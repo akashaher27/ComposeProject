@@ -26,7 +26,7 @@ class HomeDestinations(
             route = HomeRoutes.DASHBOARD,
         ) {
             val homePlugin = listOf(
-                WelcomeBannerPlugin()
+                WelcomeBannerPlugin(homeComponent.welcomeBannerViewModel())
             )
             val viewModel = homeComponent.dashBoardViewModel()
             viewModel.initPlugin(homePlugin)
