@@ -50,4 +50,9 @@ ext {
             dagger        : "com.google.dagger:dagger:${dagger_version}",
             daggerCompiler: "com.google.dagger:dagger-compiler:${dagger_version}"
     ]
+
+    coil_version = '2.3.0'
+    other = [
+            coil: "io.coil-kt:coil-compose:${coil_version}"
+    ]
 }
