@@ -99,8 +99,26 @@ fun Callout3Text(
 }
 
 @Composable
+fun Callout2Text(
+    modifier: Modifier = Modifier,
+    text: String?,
+    annotatedString: AnnotatedString? = null,
+    color: Color = AppTheme.colors.themeColors.textPrimary,
+    maxLines: Int = Int.MAX_VALUE
+) {
+    AppText(
+        modifier = modifier,
+        text = text,
+        annotatedString = annotatedString,
+        color = color,
+        maxLines = maxLines,
+        style = AppTheme.typography.callout2
+    )
+}
+
+@Composable
 fun AppText(
-    modifier: Modifier,
+    modifier: Modifier = Modifier,
     text: String?,
     annotatedString: AnnotatedString? = null,
     color: Color = AppTheme.colors.themeColors.textPrimary,
