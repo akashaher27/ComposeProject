@@ -117,6 +117,22 @@ fun Callout2Text(
 }
 
 @Composable
+fun Metadata1SemiBoldText(
+    modifier: Modifier,
+    text: String?,
+    annotatedString: AnnotatedString? = null,
+    color: Color
+) {
+    AppText(
+        modifier = modifier,
+        text = text,
+        annotatedString = annotatedString,
+        style = AppTheme.typography.metadata1SemiBold,
+        color = color
+    )
+}
+
+@Composable
 fun AppText(
     modifier: Modifier = Modifier,
     text: String?,
