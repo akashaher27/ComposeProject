@@ -45,7 +45,9 @@ fun ComfortableCard(
     onCloseClick: (() -> Unit)? = null
 ) {
     Card(
-        modifier = modifier,
+        modifier = modifier
+            .fillMaxWidth()
+            .height(IntrinsicSize.Min),
         shape = AppTheme.shapes.large,
         backgroundColor = backgroundColor
     ) {
