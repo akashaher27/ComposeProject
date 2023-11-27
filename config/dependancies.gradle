@@ -55,4 +55,9 @@ ext {
     library = [
             desugar_jdk_libs: "com.android.tools:desugar_jdk_libs:${desugar_version}"
     ]
+
+    coil_version = '2.3.0'
+    other = [
+            coil: "io.coil-kt:coil-compose:${coil_version}"
+    ]
 }
