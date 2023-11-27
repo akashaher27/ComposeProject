@@ -1,6 +1,7 @@
 package com.example.home.ui.internal.dashboard.plugin
 
 import androidx.compose.ui.res.stringResource
+import androidx.lifecycle.ViewModel
 import com.example.core.util.DateTimeProvider
 import com.example.home.R
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -9,7 +10,7 @@ import javax.inject.Inject
 
 internal class WelcomeBannerViewModel @Inject constructor(
     private val dateTimeProvider: DateTimeProvider
-) {
+) : ViewModel() {
 
     private val _welcomeBannerViewState = MutableStateFlow(ViewState.DEFAULT)
     val welcomeBannerViewState = _welcomeBannerViewState

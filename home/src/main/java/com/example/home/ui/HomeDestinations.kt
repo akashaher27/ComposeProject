@@ -7,6 +7,7 @@ import androidx.navigation.navigation
 import com.example.core.Navigation.Destinations
 import com.example.home.di.HomeComponent
 import com.example.home.ui.internal.dashboard.DashBoardScreen
+import com.example.home.ui.internal.dashboard.plugin.ForYouToday.ForYouTodayPlugin
 import com.example.home.ui.internal.dashboard.plugin.WelcomeBannerPlugin
 
 class HomeDestinations(
@@ -26,7 +27,8 @@ class HomeDestinations(
             route = HomeRoutes.DASHBOARD,
         ) {
             val homePlugin = listOf(
-                WelcomeBannerPlugin(homeComponent.welcomeBannerViewModel())
+                WelcomeBannerPlugin(homeComponent.welcomeBannerViewModel()),
+                ForYouTodayPlugin()
             )
             val viewModel = homeComponent.dashBoardViewModel()
             viewModel.initPlugin(homePlugin)
