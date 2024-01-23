@@ -5,7 +5,7 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import com.example.core.Navigation.Destinations
-import com.example.home.di.HomeComponent
+import com.example.home.ui.internal.di.HomeComponent
 import com.example.home.ui.internal.dashboard.DashBoardScreen
 import com.example.home.ui.internal.dashboard.plugin.ForYouToday.ForYouTodayPlugin
 import com.example.home.ui.internal.dashboard.plugin.WelcomeBannerPlugin
@@ -26,9 +26,10 @@ class HomeDestinations(
         composable(
             route = HomeRoutes.DASHBOARD,
         ) {
+            val pluginViewModel = homeComponent.pluginViewModel()
             val homePlugin = listOf(
                 WelcomeBannerPlugin(homeComponent.welcomeBannerViewModel()),
-                ForYouTodayPlugin()
+                ForYouTodayPlugin(pluginViewModel)
             )
             val viewModel = homeComponent.dashBoardViewModel()
             viewModel.initPlugin(homePlugin)

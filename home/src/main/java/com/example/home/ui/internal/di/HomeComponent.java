@@ -1,17 +1,21 @@
-package com.example.home.di;
+package com.example.home.ui.internal.di;
 
 
 import com.example.core.di.MainInjector;
 import com.example.home.ui.internal.dashboard.DashBoardViewModel;
+import com.example.home.ui.internal.dashboard.PluginViewModel;
 import com.example.home.ui.internal.dashboard.plugin.WelcomeBannerViewModel;
 
 import dagger.Component;
 
 
 @Component(
-        dependencies = {
-                MainInjector.class
-        }
+        modules = {
+                HomeModule.class
+        },
+        dependencies= {
+        MainInjector.class
+}
 )
 public interface HomeComponent {
 
@@ -31,4 +35,6 @@ public interface HomeComponent {
     DashBoardViewModel dashBoardViewModel();
 
     WelcomeBannerViewModel welcomeBannerViewModel();
+
+    PluginViewModel pluginViewModel();
 }
