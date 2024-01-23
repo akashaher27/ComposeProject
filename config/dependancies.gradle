@@ -56,8 +56,16 @@ ext {
             desugar_jdk_libs: "com.android.tools:desugar_jdk_libs:${desugar_version}"
     ]
 
+    retrofit_version = '2.9.0'
+    network = [
+            gson    : "com.squareup.retrofit2:converter-gson:${retrofit_version}",
+            retrofit: "com.squareup.retrofit2:retrofit:${retrofit_version}"
+    ]
+
     coil_version = '2.3.0'
+
     other = [
-            coil: "io.coil-kt:coil-compose:${coil_version}"
+            coil: "io.coil-kt:coil-compose:${coil_version}",
+
     ]
 }
