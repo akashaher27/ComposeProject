@@ -1,6 +1,6 @@
-package com.example.home.ui.internal.dashboard
+package com.example.home.ui.internal.ui.dashboard
 
-import com.example.home.ui.internal.dashboard.plugin.Plugin
+import com.example.home.ui.internal.ui.dashboard.plugin.Plugin
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update

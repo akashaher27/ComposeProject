@@ -1,4 +1,4 @@
-package com.example.home.ui.internal.dashboard
+package com.example.home.ui.internal.ui.dashboard
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.fadeIn
@@ -26,7 +26,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import com.example.home.R
-import com.example.home.ui.internal.dashboard.plugin.Plugin
+import com.example.home.ui.internal.ui.dashboard.plugin.Plugin
 import com.example.ui_common.cream.components.AppScaffold
 import com.example.ui_common.cream.components.Heading2Text
 import com.example.ui_common.cream.foundation.AppTheme

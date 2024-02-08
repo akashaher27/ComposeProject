@@ -2,9 +2,9 @@ package com.example.home.ui.internal.di;
 
 
 import com.example.core.di.MainInjector;
-import com.example.home.ui.internal.dashboard.DashBoardViewModel;
-import com.example.home.ui.internal.dashboard.PluginViewModel;
-import com.example.home.ui.internal.dashboard.plugin.WelcomeBannerViewModel;
+import com.example.home.ui.internal.ui.dashboard.DashBoardViewModel;
+import com.example.home.ui.internal.ui.dashboard.PluginViewModel;
+import com.example.home.ui.internal.ui.dashboard.plugin.WelcomeBannerViewModel;
 
 import dagger.Component;
 

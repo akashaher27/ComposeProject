@@ -6,9 +6,9 @@ import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import com.example.core.Navigation.Destinations
 import com.example.home.ui.internal.di.HomeComponent
-import com.example.home.ui.internal.dashboard.DashBoardScreen
-import com.example.home.ui.internal.dashboard.plugin.ForYouToday.ForYouTodayPlugin
-import com.example.home.ui.internal.dashboard.plugin.WelcomeBannerPlugin
+import com.example.home.ui.internal.ui.dashboard.DashBoardScreen
+import com.example.home.ui.internal.ui.dashboard.plugin.ForYouToday.ForYouTodayPlugin
+import com.example.home.ui.internal.ui.dashboard.plugin.WelcomeBannerPlugin
 
 class HomeDestinations(
     private val homeComponent: HomeComponent

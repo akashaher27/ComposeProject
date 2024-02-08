@@ -1,4 +1,4 @@
-package com.example.home.ui.internal.dashboard.plugin
+package com.example.home.ui.internal.ui.dashboard.plugin
 
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.ViewModel

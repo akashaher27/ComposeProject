@@ -68,4 +68,11 @@ ext {
             coil: "io.coil-kt:coil-compose:${coil_version}",
 
     ]
+
+    coroutine_version = '1.6.0'
+    test = [
+            junit      : "junit:junit:4.13.2",
+            mockitoCore: "org.mockito:mockito-core:5.1.1",
+            coroutines : "org.jetbrains.kotlinx:kotlinx-coroutines-test:${coroutine_version}"
+    ]
 }

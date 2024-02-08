@@ -1,4 +1,4 @@
-package com.example.home.ui.internal.dashboard
+package com.example.home.ui.internal.ui.dashboard
 
 import android.util.Log
 import androidx.lifecycle.ViewModel

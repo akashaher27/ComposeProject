@@ -1,12 +1,12 @@
-package com.example.home.ui.internal.dashboard.plugin.ForYouToday
+package com.example.home.ui.internal.ui.dashboard.plugin.ForYouToday
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.home.ui.internal.dashboard.PluginViewModel
-import com.example.home.ui.internal.dashboard.plugin.Plugin
+import com.example.home.ui.internal.ui.dashboard.PluginViewModel
+import com.example.home.ui.internal.ui.dashboard.plugin.Plugin
 import com.example.ui_common.cream.components.Metadata1SemiBoldText
 import com.example.ui_common.cream.components.cards.ComfortableCard
 import com.example.ui_common.cream.foundation.AppTheme
