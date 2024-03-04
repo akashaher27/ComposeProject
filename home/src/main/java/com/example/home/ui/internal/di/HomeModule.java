@@ -18,6 +18,6 @@ public interface HomeModule {
     }
 
     @Binds
-    HomeRepo provideHOmeRepo(HomeRepoImp homeRepoImp);
+    HomeRepo provideHomeRepo(HomeRepoImp homeRepoImp);
 
 }

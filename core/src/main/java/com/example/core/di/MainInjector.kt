@@ -11,7 +11,7 @@ interface MainInjector {
 
     fun dateTimeProvider(): DateTimeProvider
 
-    fun networkBuilderProvider():NetworkBuilder
+    fun networkBuilderProvider(): NetworkBuilder
 
     companion object {
         private var _instance: MainInjector? = null

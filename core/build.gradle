@@ -42,8 +42,11 @@ dependencies {
 
     coreLibraryDesugaring (library.desugar_jdk_libs)
 
-    api(network.gson)
-    api(network.retrofit)
+    //network
+    implementation network.gson
+    implementation network.retrofit
+    implementation network.okhttp
+    implementation network.okhttpLogging
 
     //test
     api(test.junit)

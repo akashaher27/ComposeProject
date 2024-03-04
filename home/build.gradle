@@ -49,4 +49,9 @@ dependencies {
     //accompanist
     implementation(accompanist.composeInsets)
     implementation(accompanist.swipeRefresh)
+
+    //network
+    implementation network.gson
+    implementation network.retrofit
+    implementation network.okhttp
 }
