@@ -50,6 +50,8 @@ dependencies {
     implementation(accompanist.composeInsets)
     implementation(accompanist.swipeRefresh)
 
+    coreLibraryDesugaring (library.desugar_jdk_libs)
+
     //network
     implementation network.gson
     implementation network.retrofit
