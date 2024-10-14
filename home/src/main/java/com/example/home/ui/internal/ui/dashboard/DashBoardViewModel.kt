@@ -10,33 +10,17 @@ import javax.inject.Inject
 internal class DashBoardViewModel @Inject constructor() {
 
     private val _dashboardViewState: MutableStateFlow<ViewState> =
-        MutableStateFlow(ViewState.DEFAULT)
+        MutableStateFlow(ViewState.Loading)
     val dashboardViewState: StateFlow<ViewState> = _dashboardViewState
 
-    fun initPlugin(plugin: List<Plugin>) {
-        if (_dashboardViewState.value.isPluginEmpty) {
-            _dashboardViewState.update {
-                it.copy(
-                    plugin = plugin,
-                    isLoading = false
-                )
-            }
-        }
-    }
 
 }
 
-internal data class ViewState(
-    val plugin: List<Plugin>,
-    val isLoading: Boolean
-) {
-    companion object {
-        val DEFAULT = ViewState(
-            plugin = emptyList(),
-            isLoading = true
-        )
-    }
+internal sealed class ViewState {
+    object Loading : ViewState()
+    data class Success(
+        val plugin: List<Plugin>
+    ) : ViewState()
 
-    val isPluginEmpty: Boolean
-        get() = plugin.isEmpty()
+    object Error : ViewState()
 }
