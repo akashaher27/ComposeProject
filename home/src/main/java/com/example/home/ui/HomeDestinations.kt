@@ -32,7 +32,6 @@ class HomeDestinations(
                 ForYouTodayPlugin(pluginViewModel)
             )
             val viewModel = homeComponent.dashBoardViewModel()
-            viewModel.initPlugin(homePlugin)
             DashBoardScreen(viewModel)
         }
     }
