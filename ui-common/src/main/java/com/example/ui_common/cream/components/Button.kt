@@ -26,23 +26,31 @@ fun SmallPrimaryButton(
     enable: Boolean = true,
     onClick: () -> Unit
 ) {
-    AppButton(
-        modifier = modifier,
+    PrimaryButton(
+        modifier,
         text = text,
-        textStyle = AppTheme.typography.callout3,
         enable = enable,
-        shape = AppTheme.shapes.small,
-        backgroundColor = AppTheme.colors.themeColors.brandPrimary,
-        contentColor = AppTheme.colors.themeColors.textPrimary,
-        disabledBackgroundColor = AppTheme.colors.themeColors.backgroundDisabled,
-        disabledContentColor = AppTheme.colors.themeColors.textDisabled,
+        buttonSize = ButtonSize.SMALL
     ) {
         onClick()
     }
 }
 
 @Composable
-fun LargePrimaryButton() {
+fun LargePrimaryButton(
+    modifier: Modifier = Modifier,
+    text: String,
+    enable: Boolean = true,
+    onClick: () -> Unit
+) {
+    PrimaryButton(
+        modifier,
+        text = text,
+        enable = enable,
+        buttonSize = ButtonSize.LARGE
+    ) {
+        onClick()
+    }
 }
 
 @Composable
@@ -52,7 +60,7 @@ fun SmallSecondaryButton(
     enable: Boolean = true,
     onClick: () -> Unit
 ) {
-    AppButton(
+    SecondaryButton(
         modifier = modifier
             .border(
                 width = 1.dp,
@@ -61,40 +69,85 @@ fun SmallSecondaryButton(
             )
             .requiredHeight(grid_x4),
         text = text,
-        textStyle = AppTheme.typography.callout3,
         enable = enable,
-        shape = AppTheme.shapes.small,
-        backgroundColor = Color.Transparent,
-        contentColor = AppTheme.colors.themeColors.textSecondary,
-        disabledBackgroundColor = Color.Transparent,
-        disabledContentColor = AppTheme.colors.themeColors.textDisabled,
+        buttonSize = ButtonSize.SMALL
     ) {
         onClick()
     }
 }
 
 @Composable
-fun LargeSecondaryButton() {
+fun LargeSecondaryButton(
+    modifier: Modifier = Modifier,
+    text: String,
+    enable: Boolean = true,
+    onClick: () -> Unit
+) {
+    SecondaryButton(
+        modifier,
+        text = text,
+        enable = enable,
+        buttonSize = ButtonSize.LARGE
+    ) {
+        onClick()
+    }
+}
+
+@Composable
+fun PrimaryButton(
+    modifier: Modifier,
+    text: String,
+    buttonSize: ButtonSize,
+    enable: Boolean,
+    onClick: () -> Unit
+) {
+    AppButton(
+        modifier = modifier,
+        text = text,
+        buttonSize = buttonSize,
+        enable = enable,
+        backgroundColor = AppTheme.colors.themeColors.brandPrimary
+    ) {
+        onClick()
+    }
+}
+
+@Composable
+fun SecondaryButton(
+    modifier: Modifier,
+    text: String,
+    buttonSize: ButtonSize,
+    enable: Boolean,
+    onClick: () -> Unit
+) {
+    AppButton(
+        modifier = modifier,
+        text = text,
+        buttonSize = buttonSize,
+        enable = enable,
+        backgroundColor = Color.Transparent
+    ) {
+        onClick()
+    }
 }
 
 @Composable
 fun AppButton(
     modifier: Modifier = Modifier,
     text: String,
-    textStyle: TextStyle,
+    buttonSize: ButtonSize,
     enable: Boolean = true,
-    shape: Shape,
-    backgroundColor: Color,
-    contentColor: Color,
-    disabledBackgroundColor: Color,
-    disabledContentColor: Color,
+    backgroundColor: Color = AppTheme.colors.themeColors.brandSecondary,
+    contentColor: Color = AppTheme.colors.themeColors.textPrimary,
+    disabledBackgroundColor: Color = AppTheme.colors.themeColors.backgroundDisabled,
+    disabledContentColor: Color = AppTheme.colors.themeColors.textDisabled,
     onClick: () -> Unit
 ) {
     Button(
         modifier = modifier,
         enabled = enable,
         elevation = null,
-        shape = shape,
+        shape = CircleShape,
         colors = ButtonDefaults.buttonColors(
             backgroundColor = backgroundColor,
             contentColor = contentColor,
@@ -107,9 +160,15 @@ fun AppButton(
         AppText(
             text = text,
             color = if (enable) contentColor else disabledContentColor,
-            style = textStyle,
+            style = when (buttonSize) {
+                ButtonSize.LARGE -> AppTheme.typography.callout2
+                ButtonSize.MEDIUM -> AppTheme.typography.callout3
+                ButtonSize.SMALL -> AppTheme.typography.callout3
+            }
         )
     }
+
+    TODO("Handle Button Debouncing")
 }
 
 
@@ -152,6 +211,12 @@ fun HorizontalButtonGroup() {
 fun VerticalButtonGroup() {
 }
 
+
+enum class ButtonSize {
+    LARGE,
+    MEDIUM,
+    SMALL
+}
 
 @Preview
 @Composable

@@ -54,8 +54,8 @@ fun Heading2Text(
 @Composable
 fun Heading4Text(
     text: String,
-    color: Color,
-    maxLine: Int
+    color: Color = AppTheme.colors.themeColors.textPrimary,
+    maxLine: Int = 1
 ) {
     Text(
         text = text,
@@ -77,6 +77,21 @@ fun Body3Text(
         text = text,
         color = color,
         style = AppTheme.typography.body3
+    )
+}
+
+@Composable
+fun Body2Text(
+    modifier: Modifier = Modifier,
+    text: String,
+    color: Color = AppTheme.colors.themeColors.textPrimary,
+    maxLine: Int = 1
+) {
+    AppText(
+        modifier = modifier,
+        text = text,
+        color = color,
+        style = AppTheme.typography.body2
     )
 }
 
