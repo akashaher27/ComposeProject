@@ -13,6 +13,7 @@ internal class DashBoardViewModel @Inject constructor() {
         MutableStateFlow(ViewState.Loading)
     val dashboardViewState: StateFlow<ViewState> = _dashboardViewState
 
+    fun onRetry() {}
 
 }
 
