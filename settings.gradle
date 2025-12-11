@@ -19,3 +19,6 @@ include ':ui-common'
 include ':core'
 include ':home'
 include ':navigation'
+
+enableFeaturePreview("VERSION_CATALOGS")
+include ':mylibrary'

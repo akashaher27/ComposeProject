@@ -61,7 +61,7 @@ dependencies {
     api(accompanist.placeholder)
 
     //other
-    implementation(other.coil)
+    implementation(libs.coil)
 
 
     testImplementation 'junit:junit:4.13.2'
