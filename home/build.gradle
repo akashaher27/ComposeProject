@@ -43,7 +43,6 @@ dependencies {
     implementation project(":ui-common")
     implementation project(":core")
 
-    implementation dagger.dagger
     annotationProcessor(dagger.daggerCompiler)
 
     //accompanist

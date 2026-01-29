@@ -5,10 +5,11 @@ plugins {
 
 android {
     namespace 'com.example.moviefeature'
-    compileSdk 33
+    compileSdkVersion AndroidConfig.COMPILE_SDK_VERSION
 
     defaultConfig {
-        minSdk 24
+        minSdkVersion AndroidConfig.MIN_SDK_VERSION
+        targetSdkVersion AndroidConfig.TARGET_SDK_VERSION
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -25,7 +26,7 @@ android {
         targetCompatibility JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = '11'
+        jvmTarget = KotlinOptions.JVM_TARGET
     }
 
     buildFeatures {

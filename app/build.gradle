@@ -43,7 +43,6 @@ dependencies {
     implementation project(":core")
     implementation project(":home")
 
-    implementation dagger.dagger
     annotationProcessor(dagger.daggerCompiler)
 
     //test

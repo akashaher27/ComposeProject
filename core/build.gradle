@@ -35,9 +35,9 @@ android {
 }
 
 dependencies {
-    implementation project(":ui-common")
 
-    implementation dagger.dagger
+    //dagger
+    api(dagger.dagger)
     annotationProcessor(dagger.daggerCompiler)
 
     coreLibraryDesugaring (library.desugar_jdk_libs)
@@ -47,6 +47,9 @@ dependencies {
     implementation network.retrofit
     implementation network.okhttp
     implementation network.okhttpLogging
+
+    //navigation
+    api navigation.navigation
 
     //test
     api(test.junit)
