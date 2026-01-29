@@ -22,6 +22,7 @@ class HomeActivity : AppCompatActivity() {
             HomeActivity::class.java
         )
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         toFullScreen()
@@ -45,6 +46,8 @@ class HomeActivity : AppCompatActivity() {
         }
     }
 
-    private fun createDestinations(homeComponent: HomeComponent) = setOf(HomeDestinations(homeComponent))
+    private fun createDestinations(homeComponent: HomeComponent) = setOf(
+        HomeDestinations(homeComponent)
+    )
 }
 
