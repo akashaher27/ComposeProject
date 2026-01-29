@@ -5,7 +5,7 @@
 
     <application>
         <activity
-            android:name=".ui.HomeActivity"
+            android:name="com.example.composeproject.ui.HomeActivity"
             android:exported="true" />
     </application>
 </manifest>

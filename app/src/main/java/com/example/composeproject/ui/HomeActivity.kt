@@ -1,4 +1,4 @@
-package com.example.home.ui
+package com.example.composeproject.ui
 
 import android.content.Context
 import android.content.Intent
@@ -6,6 +6,8 @@ import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.compose.rememberNavController
+import com.example.home.ui.HomeDestinations
+import com.example.home.ui.HomeRoot
 import com.example.home.ui.internal.di.HomeComponent
 import com.example.ui_common.cream.components.AppBottomSheetLayout
 import com.example.ui_common.cream.foundation.AppTheme

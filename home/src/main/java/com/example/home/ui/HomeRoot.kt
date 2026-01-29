@@ -11,7 +11,7 @@ import com.example.core.Navigation.Destinations
 
 
 @Composable
-internal fun HomeRoot(navController: NavHostController, destinations: Set<Destinations>) {
+fun HomeRoot(navController: NavHostController, destinations: Set<Destinations>) {
 
     Scaffold() { paddingValues ->
         NavHost(
