@@ -11,13 +11,16 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-class MovieViewModel  @Inject constructor(
+class MovieViewModel @Inject constructor(
     private val getMovieUseCase: GetMovieUseCase
 ) : ViewModel() {
 
     private val _uiState: MutableStateFlow<UiState> = MutableStateFlow(UiState.Loading)
     val uiState = _uiState.asStateFlow()
 
+    init {
+        getMovieList()
+    }
 
     private fun getMovieList() {
         viewModelScope.launch {
@@ -44,7 +47,7 @@ class MovieViewModel  @Inject constructor(
 
 sealed class UiState {
     object Loading : UiState()
-    data class Success(val data: List<Movie> = emptyList()) : UiState()
+    data class Success(val data: List<Movie>) : UiState()
     data class Error(val message: String) : UiState()
 
 }

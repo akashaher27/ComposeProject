@@ -2,6 +2,8 @@ package com.example.moviefeature.presenter
 
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
@@ -28,7 +30,11 @@ class MovieDestination : Destinations {
         composable(
             route = MovieRoutes.MOVIE_LIST
         ) {
-            MovieScreen() { event ->
+            val uiState by viewModel.uiState.collectAsState()
+            MovieScreen(
+                uiState = uiState
+
+            ) { event ->
                 viewModel.onMovieEvent(event)
             }
         }
