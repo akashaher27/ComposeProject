@@ -3,6 +3,7 @@ package com.example.core.di
 import com.example.core.Navigation.NavigationRouteProvider
 import com.example.core.network.NetworkBuilder
 import com.example.core.util.DateTimeProvider
+import kotlinx.coroutines.CoroutineDispatcher
 import java.lang.IllegalStateException
 
 interface MainInjector {
@@ -12,6 +13,8 @@ interface MainInjector {
     fun dateTimeProvider(): DateTimeProvider
 
     fun networkBuilderProvider(): NetworkBuilder
+
+    fun coroutineDispatcherProvider():CoroutineDispatcher
 
     companion object {
         private var _instance: MainInjector? = null

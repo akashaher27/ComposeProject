@@ -42,6 +42,7 @@ dependencies {
 //    implementation project(":splash")
     implementation project(":core")
     implementation project(":home")
+    implementation project(":movieFeature")
 
     annotationProcessor(dagger.daggerCompiler)
 

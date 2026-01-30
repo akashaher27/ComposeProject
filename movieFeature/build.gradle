@@ -42,4 +42,9 @@ dependencies {
     implementation project(":ui-common")
 
     annotationProcessor(dagger.daggerCompiler)
+
+    //network
+    implementation network.gson
+    implementation network.retrofit
+    implementation network.okhttp
 }

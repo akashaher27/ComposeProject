@@ -6,8 +6,9 @@ import com.example.moviefeature.domain.MovieRepository
 import com.example.moviefeature.domain.model.Movie
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
+import javax.inject.Inject
 
-class MovieRepositoryImp(
+class MovieRepositoryImp @Inject constructor(
     private val movieApi: MovieApi
 ) : MovieRepository {
 
