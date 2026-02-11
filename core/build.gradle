@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
+    // Apply KSP plugin using Catalog
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -50,6 +52,14 @@ dependencies {
 
     //navigation
     api navigation.navigation
+
+    //room
+    // Room Runtime & KTX (Using Catalog accessors)
+    implementation libs.room.runtime
+    implementation libs.room.ktx
+
+    // Annotation Processor (KSP)
+    ksp libs.room.compiler
 
     //test
     api(test.junit)

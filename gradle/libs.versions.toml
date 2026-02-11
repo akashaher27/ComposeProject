@@ -1,0 +1,13 @@
+[versions]
+room_version = "2.5.2"
+kotlin_version = '1.8.10'
+ksp = "1.8.10-1.0.9"
+
+[libraries]
+room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room_version" }
+room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room_version" }
+room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room_version" }
+
+[plugins]
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+
