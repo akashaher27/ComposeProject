@@ -1,5 +1,7 @@
 package com.example.moviefeature.data.di;
 
+import com.example.core.database.LocalDatabase;
+import com.example.core.database.MovieDao;
 import com.example.core.network.NetworkBuilder;
 import com.example.moviefeature.data.api.MovieApi;
 import com.example.moviefeature.data.repo.MovieRepositoryImp;
@@ -17,5 +19,10 @@ public interface MovieModule {
     @Provides
     static MovieApi provideHomeApi(NetworkBuilder networkBuilder) {
         return networkBuilder.createService(MovieApi.class);
+    }
+
+    @Provides
+    static MovieDao provideMovieDao(LocalDatabase localDatabase) {
+        return localDatabase.movieDao();
     }
 }

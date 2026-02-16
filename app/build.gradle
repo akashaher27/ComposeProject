@@ -1,5 +1,11 @@
+
+plugins{
+    alias(libs.plugins.ksp)
+}
 apply plugin: GradlePluginId.ANDROID_APPLICATION
 apply plugin: GradlePluginId.KOTLIN_ANDROID
+
+
 
 android {
     namespace 'com.example.composeproject'
@@ -45,6 +51,9 @@ dependencies {
     implementation project(":movieFeature")
 
     annotationProcessor(dagger.daggerCompiler)
+
+    // Annotation Processor (KSP)
+    ksp libs.room.compiler
 
     //test
     testImplementation 'junit:junit:4.13.2'

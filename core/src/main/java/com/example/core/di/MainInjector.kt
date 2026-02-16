@@ -1,6 +1,7 @@
 package com.example.core.di
 
 import com.example.core.Navigation.NavigationRouteProvider
+import com.example.core.database.LocalDatabase
 import com.example.core.network.NetworkBuilder
 import com.example.core.util.DateTimeProvider
 import kotlinx.coroutines.CoroutineDispatcher
@@ -15,6 +16,8 @@ interface MainInjector {
     fun networkBuilderProvider(): NetworkBuilder
 
     fun coroutineDispatcherProvider():CoroutineDispatcher
+
+    fun localDatabaseProvider():LocalDatabase
 
     companion object {
         private var _instance: MainInjector? = null

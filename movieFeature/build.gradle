@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -42,6 +43,8 @@ dependencies {
     implementation project(":ui-common")
 
     annotationProcessor(dagger.daggerCompiler)
+    // Annotation Processor (KSP)
+    ksp libs.room.compiler
 
     //network
     implementation network.gson

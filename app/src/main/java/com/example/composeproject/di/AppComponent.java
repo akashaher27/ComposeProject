@@ -6,6 +6,8 @@ import com.example.composeproject.di.module.AppModule;
 import com.example.composeproject.di.module.UtilityModule;
 import com.example.core.di.MainInjector;
 
+import javax.inject.Singleton;
+
 import dagger.BindsInstance;
 import dagger.Component;
 
@@ -13,6 +15,7 @@ import dagger.Component;
         AppModule.class,
         UtilityModule.class
 })
+@Singleton
 public interface AppComponent extends MainInjector {
 
     @Component.Factory

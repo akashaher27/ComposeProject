@@ -5,32 +5,46 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.moviefeature.domain.model.Movie
 import com.example.moviefeature.domain.useCase.GetMovieUseCase
+import com.example.moviefeature.domain.useCase.RefreshMovieUseCase
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class MovieViewModel @Inject constructor(
-    private val getMovieUseCase: GetMovieUseCase
+    private val getMovieUseCase: GetMovieUseCase,
+    private val refreshMovieUseCase: RefreshMovieUseCase
 ) : ViewModel() {
 
-    private val _uiState: MutableStateFlow<UiState> = MutableStateFlow(UiState.Loading)
-    val uiState = _uiState.asStateFlow()
+    val uiState: StateFlow<UiState> = getMovieUseCase()
+        .map { movies ->
+            if (movies.isEmpty()) UiState.Loading else UiState.Success(movies)
+        }
+        .catch {
+            emit(UiState.Error("Failed to read local data"))
+        }
+        .stateIn(
+            scope = viewModelScope,
+            started = SharingStarted.WhileSubscribed(5000),
+            initialValue = UiState.Loading
+        )
 
     init {
-        getMovieList()
+        refreshMovieList()
     }
 
-    private fun getMovieList() {
+
+    private fun refreshMovieList() {
         viewModelScope.launch {
-            getMovieUseCase()
-                .onSuccess { response ->
-                    _uiState.update { UiState.Success(response) }
-                }
-                .onFailure {
-                    _uiState.update { UiState.Error("Error") }
-                }
+            refreshMovieUseCase()
         }
     }
 
@@ -44,6 +58,7 @@ class MovieViewModel @Inject constructor(
         }
     }
 }
+
 
 sealed class UiState {
     object Loading : UiState()

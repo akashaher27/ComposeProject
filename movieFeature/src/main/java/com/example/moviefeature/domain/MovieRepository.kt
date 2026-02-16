@@ -1,9 +1,12 @@
 package com.example.moviefeature.domain
 
 import com.example.moviefeature.domain.model.Movie
+import kotlinx.coroutines.flow.Flow
 
 interface MovieRepository {
 
-    suspend fun getMovieList(): List<Movie>
+    fun getMovieList(): Flow<List<Movie>>
+
+    suspend fun refreshMovieList()
 }
 

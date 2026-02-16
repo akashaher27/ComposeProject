@@ -4,19 +4,16 @@ import com.example.core.util.resultOf
 import com.example.moviefeature.domain.MovieRepository
 import com.example.moviefeature.domain.model.Movie
 import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 class GetMovieUseCase @Inject constructor(
-    private val movieRepository: MovieRepository,
-    private val dispatcher: CoroutineDispatcher
+    private val movieRepository: MovieRepository
 ) {
-    suspend operator fun invoke(): Result<List<Movie>> {
-        return resultOf {
-            withContext(dispatcher) {
-                movieRepository.getMovieList()
-            }
-        }
+    operator fun invoke(): Flow<List<Movie>> {
+        return movieRepository.getMovieList()
     }
 }
 
