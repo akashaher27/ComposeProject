@@ -9,10 +9,8 @@ import androidx.navigation.compose.rememberNavController
 import com.example.home.ui.HomeDestinations
 import com.example.home.ui.internal.di.HomeComponent
 import com.example.moviefeature.presenter.MovieDestination
-import com.example.ui_common.cream.components.AppBottomSheetLayout
 import com.example.ui_common.cream.foundation.AppTheme
 import com.example.ui_common.ui.extension.toFullScreen
-import com.google.accompanist.navigation.material.rememberBottomSheetNavigator
 
 const val TAG = "HomeActivity"
 
@@ -30,19 +28,13 @@ class HomeActivity : AppCompatActivity() {
         toFullScreen()
         setContent {
             val navController = rememberNavController()
-            val bottomSheetNavigator = rememberBottomSheetNavigator()
             val homeComponent: HomeComponent by lazy {
                 HomeComponent.build()
             }
             AppTheme {
-                AppBottomSheetLayout(
-                    bottomSheetNavigator = bottomSheetNavigator,
-                    content = {
-                        HomeRoot(
-                            navController = navController,
-                            destinations = createDestinations(homeComponent)
-                        )
-                    }
+                HomeRoot(
+                    navController = navController,
+                    destinations = createDestinations(homeComponent)
                 )
             }
         }

@@ -45,10 +45,6 @@ dependencies {
 
     annotationProcessor(dagger.daggerCompiler)
 
-    //accompanist
-    implementation(accompanist.composeInsets)
-    implementation(accompanist.swipeRefresh)
-
     coreLibraryDesugaring (library.desugar_jdk_libs)
 
     //network

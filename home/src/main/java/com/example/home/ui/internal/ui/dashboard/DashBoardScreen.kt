@@ -39,9 +39,6 @@ import com.example.ui_common.ui.common.theme.grid_x1
 import com.example.ui_common.ui.common.theme.grid_x16
 import com.example.ui_common.ui.common.theme.grid_x2
 import com.example.ui_common.ui.common.theme.grid_x3
-import com.google.accompanist.placeholder.PlaceholderHighlight
-import com.google.accompanist.placeholder.material.shimmer
-import com.google.accompanist.placeholder.material.placeholder
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
@@ -93,10 +90,6 @@ private fun ShowLoadingState() {
                     .requiredHeight(grid_x16)
                     .clip(shape = AppTheme.shapes.small)
                     .background(color = AppTheme.colors.themeColors.backgroundTertiary)
-                    .placeholder(
-                        visible = true,
-                        highlight = PlaceholderHighlight.shimmer()
-                    )
             )
         }
     }

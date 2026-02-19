@@ -35,16 +35,6 @@ ext {
     ]
 
 
-    accompanist_version = "0.30.1"
-    accompanist = [
-            systemUi     : "com.google.accompanist:accompanist-systemuicontroller:${accompanist_version}",
-            composeInsets: "com.google.accompanist:accompanist-insets:${accompanist_version}",
-            navigation   : "com.google.accompanist:accompanist-navigation-material:${accompanist_version}",
-            permission   : "com.google.accompanist:accompanist-permissions:${accompanist_version}",
-            placeholder  : "com.google.accompanist:accompanist-placeholder-material:${accompanist_version}",
-            swipeRefresh : "com.google.accompanist:accompanist-swiperefresh:${accompanist_version}"
-    ]
-
     dagger_version = '2.40.5'
     dagger = [
             dagger        : "com.google.dagger:dagger:${dagger_version}",
