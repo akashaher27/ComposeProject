@@ -1,6 +1,7 @@
 
 plugins{
     alias(libs.plugins.ksp)
+    alias(libs.plugins.kotlin.compose.compiler)
 }
 apply plugin: GradlePluginId.ANDROID_APPLICATION
 apply plugin: GradlePluginId.KOTLIN_ANDROID
@@ -28,8 +29,10 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_11
-        targetCompatibility JavaVersion.VERSION_11
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+
+        coreLibraryDesugaringEnabled true
     }
     kotlinOptions {
         jvmTarget = KotlinOptions.JVM_TARGET
@@ -37,9 +40,7 @@ android {
     buildFeatures {
         compose true
     }
-    composeOptions {
-        kotlinCompilerExtensionVersion compose_version
-    }
+
 }
 
 dependencies {
@@ -52,8 +53,11 @@ dependencies {
 
     annotationProcessor(dagger.daggerCompiler)
 
+    coreLibraryDesugaring (library.desugar_jdk_libs)
+
     // Annotation Processor (KSP)
     ksp libs.room.compiler
+
 
     //test
     testImplementation 'junit:junit:4.13.2'

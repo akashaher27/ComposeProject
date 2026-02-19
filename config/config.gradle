@@ -26,6 +26,6 @@ ext {
     ]
 
     KotlinOptions = [
-            JVM_TARGET: '11',
+            JVM_TARGET: '17',
     ]
 }
