@@ -43,15 +43,16 @@ dependencies {
     api core.ktx
     api core.material
 
-
     //compose
-    api compose.compiler
-    api compose.runtime
-    api compose.material
-    api compose.constraintlayout
-    api compose.uiToolingPreview
-    api compose.uiTooling
+    def composeBom = platform(libs.compose.bom)
+    implementation composeBom
 
+    api(libs.bundles.compose.core)
+    api(libs.compose.constraintlayout)
+    api(libs.compose.navigation)
+
+    // 4. Tooling
+    debugImplementation libs.compose.ui.tooling
 
     //other
     implementation(other.coil)

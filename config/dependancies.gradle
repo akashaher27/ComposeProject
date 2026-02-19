@@ -21,12 +21,9 @@ ext {
             compiler        : "androidx.compose.compiler:compiler:${compose_version}",
             runtime         : "androidx.compose.runtime:runtime:${compose_version}",
             material        : "androidx.compose.material:material:${compose_version}",
-            foundation      : "androidx.compose.foundation:foundation:${compose_version}",
-            ui              : "androidx.compose.ui:ui:${compose_version}",
-            uiUtil          : "androidx.compose.ui:ui-util:${compose_version}",
+            constraintlayout: "androidx.constraintlayout:constraintlayout-compose:${compose_constraintlayout_version}",
             uiTooling       : "androidx.compose.ui:ui-tooling:${compose_version}",
             uiToolingPreview: "androidx.compose.ui:ui-tooling-preview:${compose_version}",
-            constraintlayout: "androidx.constraintlayout:constraintlayout-compose:${compose_constraintlayout_version}",
     ]
 
     navigation_version = '2.5.3'
