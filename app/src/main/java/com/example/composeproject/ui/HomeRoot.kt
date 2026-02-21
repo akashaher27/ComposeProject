@@ -6,22 +6,24 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.rememberNavController
 import com.example.core.Navigation.Destinations
 import com.example.home.ui.HomeRoutes
 import com.example.moviefeature.presenter.MovieRoutes
 
 
 @Composable
-fun HomeRoot(navController: NavHostController, destinations: Set<Destinations>) {
+fun HomeRoot(destinations: Set<Destinations>) {
 
-    Scaffold() { paddingValues ->
+    val navController = rememberNavController()
+
+    Scaffold { paddingValues ->
         NavHost(
             navController = navController,
             startDestination = MovieRoutes.ROOT,
             modifier = Modifier
                 .padding(paddingValues)
         ) {
-
             destinations.forEach { destination ->
                 with(destination) { create(navController) }
             }

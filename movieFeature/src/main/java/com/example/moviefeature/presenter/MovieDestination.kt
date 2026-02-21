@@ -4,6 +4,7 @@ package com.example.moviefeature.presenter
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
@@ -26,10 +27,10 @@ class MovieDestination : Destinations {
     }
 
     private fun NavGraphBuilder.movieListScreen(movieComponent: MovieComponent) {
-        val viewModel = movieComponent.movieViewModel()
         composable(
             route = MovieRoutes.MOVIE_LIST
         ) {
+            val viewModel = viewModel { movieComponent.movieViewModel() }
             val uiState by viewModel.uiState.collectAsState()
             MovieScreen(
                 uiState = uiState

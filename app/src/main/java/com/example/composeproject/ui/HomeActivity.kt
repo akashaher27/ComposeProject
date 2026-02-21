@@ -27,13 +27,11 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         toFullScreen()
         setContent {
-            val navController = rememberNavController()
             val homeComponent: HomeComponent by lazy {
                 HomeComponent.build()
             }
             AppTheme {
                 HomeRoot(
-                    navController = navController,
                     destinations = createDestinations(homeComponent)
                 )
             }
