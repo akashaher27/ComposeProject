@@ -27,19 +27,16 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         toFullScreen()
         setContent {
-            val homeComponent: HomeComponent by lazy {
-                HomeComponent.build()
-            }
             AppTheme {
                 HomeRoot(
-                    destinations = createDestinations(homeComponent)
+                    destinations = createDestinations()
                 )
             }
         }
     }
 
-    private fun createDestinations(homeComponent: HomeComponent) = setOf(
-        HomeDestinations(homeComponent),
+    private fun createDestinations() = setOf(
+        HomeDestinations(),
         MovieDestination()
     )
 }

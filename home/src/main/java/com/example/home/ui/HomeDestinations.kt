@@ -13,18 +13,21 @@ import com.example.home.ui.internal.ui.dashboard.plugin.ForYouToday.ForYouTodayP
 import com.example.home.ui.internal.ui.dashboard.plugin.WelcomeBannerPlugin
 
 class HomeDestinations(
-    private val homeComponent: HomeComponent
 ) : Destinations {
     override fun NavGraphBuilder.create(navController: NavController) {
+        val homeComponent: HomeComponent by lazy {
+            HomeComponent.build()
+        }
         navigation(
             route = HomeRoutes.ROOT,
             startDestination = HomeRoutes.DASHBOARD
         ) {
-            dashBoardScreen()
+            dashBoardScreen(homeComponent)
         }
     }
 
-    private fun NavGraphBuilder.dashBoardScreen() {
+    private fun NavGraphBuilder.dashBoardScreen(homeComponent: HomeComponent) {
+
         composable(
             route = HomeRoutes.DASHBOARD,
         ) {
